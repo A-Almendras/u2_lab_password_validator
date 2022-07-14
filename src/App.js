@@ -24,7 +24,10 @@ const App = () => {
   // 4. Display a message if the user's inputs are valid or invalid.
   const handleSubmitForm = (event) => {
     event.preventDefault()
-
+    // Bonus: Make sure passwords are at least 7 characters in length.
+    // if (password.length < 7) {
+    //   passwordMessage = 'Password must be at least 7 characters in length'
+    // }
     if (password === passwordConfirm) {
       // console.log('Passwords match')
       setValid('valid')
@@ -37,6 +40,19 @@ const App = () => {
     setPasswordMessage(passwordMessage) // this actually displays the message depending id password is valid or invalid
   }
 
+  // Bonus: Add a cancel button that clears the fields when clicked.
+  const handleResetClick = () => {
+    // username = ''
+    // setUsername(username)
+    // Lines 41-42 are being replaced by line 44; can do the same for the rest
+    setUsername('')
+
+    setPassword('')
+    setPasswordConfirm('')
+    setValid('')
+    setPasswordMessage('Passwords must match.')
+  }
+
   return (
     <Validator
       handleChange={handleChange}
@@ -46,6 +62,7 @@ const App = () => {
       handleSubmitForm={handleSubmitForm}
       valid={valid}
       passwordMessage={passwordMessage}
+      handleResetClick={handleResetClick}
     />
   )
 }

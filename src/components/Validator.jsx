@@ -35,6 +35,15 @@ const Validator = (props) => {
         <button type="submit" onClick={props.handleSubmitForm}>
           Sign Up
         </button>
+        {/* Bonus: Add a cancel button that clears the fields when clicked. */}
+        <button
+          type="button"
+          className="cancel"
+          onClick={props.handleResetClick}
+        >
+          Reset
+        </button>
+        {/* Bonus: Add a class of invalid or valid to the message conditionally (CSS already exists) */}
         <p className={props.valid}>{props.passwordMessage}</p>
       </form>
     </div>
