@@ -32,8 +32,10 @@ const Validator = (props) => {
         />
         <label htmlFor="passwordConfirm">Confirm password</label>
 
-        <button type="submit">Sign Up</button>
-        <p>Passwords must match.</p>
+        <button type="submit" onClick={props.handleSubmitForm}>
+          Sign Up
+        </button>
+        <p className={props.valid}>{props.passwordMessage}</p>
       </form>
     </div>
   )
